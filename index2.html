@@ -5,31 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UGC & Travel Content Creator Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
   <style>
-    /* Global Styles */
+    /* Global Variables */
     :root {
-      --primary-color: #f5f5f5;
-      --secondary-color: #fcf0f2;
-      --accent-color: #ff7b93;
-      --text-color: #262626;
+      --primary: #f5f5f5;
+      --secondary: #fcf0f2;
+      --accent: #ff7b93;
+      --text: #262626;
       --light-text: #8e8e8e;
-      --dark-bg: #121212;
+      --dark: #121212;
+      --radius: 12px;
       --font-main: 'Poppins', sans-serif;
       --font-accent: 'Italiana', serif;
-      --border-radius: 12px;
     }
     
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* Base Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
       font-family: var(--font-main);
-      color: var(--text-color);
+      color: var(--text);
       line-height: 1.8;
-      background-color: #fff;
       font-weight: 300;
     }
     
@@ -40,6 +37,24 @@
       letter-spacing: 0.5px;
     }
     
+    p { margin-bottom: 1.5rem; font-size: 1.05rem; }
+    
+    a {
+      text-decoration: none;
+      color: var(--accent);
+      transition: all 0.3s;
+    }
+    
+    a:hover { color: #ff506f; }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--radius);
+    }
+    
+    /* Layout */
     .container {
       width: 90%;
       max-width: 1300px;
@@ -48,15 +63,42 @@
     }
     
     .section {
-      padding: 120px 0;
+      padding: 80px 0;
+      position: relative;
     }
     
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to bottom, var(--prev-bg, #fff), var(--bg, #fff));
+    }
+    
+    /* Section Backgrounds */
+    .hero { --bg: #fff; --prev-bg: #fff; }
+    .about { --bg: var(--primary); --prev-bg: #fff; }
+    .ugc-work { --bg: #fff; --prev-bg: var(--primary); }
+    .instagram-analytics { --bg: var(--secondary); --prev-bg: #fff; }
+    .photography { --bg: #fff; --prev-bg: var(--secondary); }
+    .footer { 
+      --bg: var(--dark); 
+      --prev-bg: #fff;
+      background-color: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 80px 0 50px;
+    }
+    
+    /* Common Components */
     .section-title {
       text-align: center;
-      margin-bottom: 70px;
-      position: relative;
+      margin-bottom: 50px;
       font-size: 2.5rem;
       letter-spacing: 1px;
+      position: relative;
     }
     
     .section-title:after {
@@ -64,54 +106,40 @@
       display: block;
       width: 60px;
       height: 2px;
-      background-color: var(--accent-color);
+      background-color: var(--accent);
       margin: 25px auto 0;
     }
-
-    p {
-      margin-bottom: 1.5rem;
-      font-size: 1.05rem;
-    }
-
-    a {
-      text-decoration: none;
-      color: var(--accent-color);
-      transition: all 0.3s ease;
-    }
-
-    a:hover {
-      color: #ff506f;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      border-radius: var(--border-radius);
-    }
-
+    
     .btn {
       display: inline-block;
       padding: 14px 35px;
-      background-color: var(--accent-color);
+      background-color: var(--accent);
       color: white;
       border: none;
       border-radius: 30px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      transition: all 0.4s ease;
+      transition: all 0.4s;
       cursor: pointer;
       font-size: 0.9rem;
     }
-
+    
     .btn:hover {
       background-color: #ff506f;
       transform: translateY(-3px);
       box-shadow: 0 10px 20px rgba(255, 123, 147, 0.2);
     }
-
-    /* Navbar */
+    
+    /* Grid Layouts */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    
+    /* Navigation */
     .navbar {
       position: fixed;
       top: 0;
@@ -122,37 +150,35 @@
       box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
       padding: 18px 0;
     }
-
+    
     .navbar .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
+    
     .logo {
       font-family: var(--font-accent);
       font-size: 2rem;
-      color: var(--text-color);
+      color: var(--text);
       letter-spacing: 2px;
     }
-
+    
     .nav-links {
       display: flex;
       list-style: none;
     }
-
-    .nav-links li {
-      margin-left: 40px;
-    }
-
+    
+    .nav-links li { margin-left: 40px; }
+    
     .nav-links a {
-      color: var(--text-color);
+      color: var(--text);
       font-weight: 400;
       position: relative;
       font-size: 0.95rem;
       letter-spacing: 0.5px;
     }
-
+    
     .nav-links a::after {
       content: '';
       position: absolute;
@@ -160,46 +186,24 @@
       left: 0;
       width: 0;
       height: 1px;
-      background-color: var(--accent-color);
+      background-color: var(--accent);
       transition: width 0.3s;
     }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
+    
+    .nav-links a:hover::after { width: 100%; }
+    
     .hamburger {
       display: none;
       cursor: pointer;
     }
-
+    
     /* Hero Section */
-    .hero {
-      height: 100vh;
-      background-color: #fff;
-      display: flex;
-      align-items: center;
-      margin-top: 0;
-      padding-top: 0;
-    }
-
-    .hero-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .hero-text {
-      padding-right: 30px;
-    }
-
     .hero-text h1 {
       font-size: 4rem;
       margin-bottom: 30px;
       line-height: 1.1;
     }
-
+    
     .hero-text h2 {
       font-size: 1.5rem;
       color: var(--light-text);
@@ -207,150 +211,98 @@
       font-weight: 300;
       font-family: var(--font-main);
     }
-
-    .hero-text p {
-      margin-bottom: 40px;
-      font-size: 1.1rem;
-      color: var(--light-text);
-    }
-
-    .social-links {
-      display: flex;
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .social-links a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text-color);
-      transition: color 0.3s;
-      font-size: 0.95rem;
-    }
-
-    .social-links a i {
-      font-size: 1.2rem;
-    }
-
-    .social-links a:hover {
-      color: var(--accent-color);
-    }
-
+    
     .hero-images {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
     }
-
+    
     .hero-img {
-      border-radius: var(--border-radius);
+      border-radius: var(--radius);
       overflow: hidden;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-      transition: all 0.5s ease;
+      transition: all 0.5s;
     }
-
+    
     .hero-img:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
-
-    .hero-img:nth-child(1) {
-      transform: translateY(-30px);
-    }
-
-    .hero-img:nth-child(2) {
-      transform: translateY(30px);
-    }
-
-    .hero-img:nth-child(1):hover {
-      transform: translateY(-40px);
-    }
-
-    .hero-img:nth-child(2):hover {
-      transform: translateY(20px);
-    }
-
-    /* About Section */
-    .about {
-      background-color: var(--primary-color);
-      position: relative;
-    }
-
-    .about::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: linear-gradient(to bottom, #fff, var(--primary-color));
-    }
-
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
+    
+    .hero-img:nth-child(1) { transform: translateY(-30px); }
+    .hero-img:nth-child(2) { transform: translateY(30px); }
+    .hero-img:nth-child(1):hover { transform: translateY(-40px); }
+    .hero-img:nth-child(2):hover { transform: translateY(20px); }
+    
+    /* Instagram Stats */
+    .insta-username {
+      display: flex;
       align-items: center;
-    }
-
-    .about-img {
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-      transition: all 0.5s ease;
-    }
-
-    .about-img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-    }
-
-    .about-text {
-      padding-left: 30px;
-    }
-
-    .about-text h2 {
-      font-size: 3rem;
+      gap: 10px;
+      font-weight: 500;
       margin-bottom: 30px;
     }
-
-    .about-text p {
+    
+    .insta-username img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .insta-stats {
+      display: flex;
+      gap: 30px;
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+    
+    .insta-stat { text-align: center; }
+    
+    .insta-stat-number {
+      font-weight: 600;
       font-size: 1.1rem;
-      margin-bottom: 25px;
-      color: var(--text-color);
     }
-
+    
+    .insta-stat-label {
+      font-size: 0.9rem;
+      color: var(--light-text);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+      transition: color 0.3s;
+      font-size: 0.95rem;
+    }
+    
+    .social-links a i { font-size: 1.2rem; }
+    .social-links a:hover { color: var(--accent); }
+    
     /* UGC Work Section */
-    .ugc-work {
-      background-color: #fff;
-      position: relative;
-    }
-
-    .ugc-work::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: linear-gradient(to bottom, var(--primary-color), #fff);
-    }
-
     .collabs-title {
       text-align: center;
       margin: 70px 0 50px;
       font-size: 2rem;
       letter-spacing: 1px;
     }
-
+    
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 50px;
-      margin-bottom: 70px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
     }
-
+    
     .iphone-mockup {
       background-image: url('/api/placeholder/320/650');
       background-size: contain;
@@ -358,16 +310,16 @@
       background-position: center;
       position: relative;
       width: 100%;
-      padding-bottom: 200%; /* Aspect ratio for iPhone */
+      padding-bottom: 200%;
       margin: 0 auto;
-      max-width: 300px;
-      transition: all 0.5s ease;
+      max-width: 280px;
+      transition: all 0.5s;
     }
-
+    
     .iphone-mockup:hover {
       transform: translateY(-10px) scale(1.02);
     }
-
+    
     .video-placeholder {
       position: absolute;
       top: 12%;
@@ -381,18 +333,14 @@
       align-items: center;
       overflow: hidden;
     }
-
+    
     .video-thumbnail {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 8s ease;
+      cursor: pointer;
     }
-
-    .iphone-mockup:hover .video-thumbnail {
-      transform: scale(1.1);
-    }
-
+    
     .play-icon {
       position: absolute;
       top: 50%;
@@ -407,82 +355,51 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      opacity: 0;
-      transition: opacity 0.3s;
+      opacity: 0.8;
+      pointer-events: none;
     }
-
-    .iphone-mockup:hover .play-icon {
-      opacity: 1;
-    }
-
-    /* Instagram Analytics Section */
-    .instagram-analytics {
-      background-color: var(--secondary-color);
-      position: relative;
-    }
-
-    .instagram-analytics::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: linear-gradient(to bottom, #fff, var(--secondary-color));
-    }
-
-    .analytics-content {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 70px;
-      align-items: center;
-    }
-
+    
+    /* Instagram Analytics */
     .analytics-videos {
-      display: grid;
+      display: grid;  
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
     }
-
+    
     .insta-video {
-      border-radius: var(--border-radius);
+      border-radius: var(--radius);
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       position: relative;
-      transition: all 0.5s ease;
+      transition: all 0.5s;
     }
-
+    
     .insta-video:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     }
-
-    .insta-video img {
-      transition: transform 8s ease;
-    }
-
-    .insta-video:hover img {
-      transform: scale(1.1);
-    }
-
+    
+    .insta-video img { transition: transform 8s; }
+    .insta-video:hover img { transform: scale(1.1); }
+    
     .analytics-info {
-      padding: 50px;
+      padding: 40px;
       background-color: white;
-      border-radius: var(--border-radius);
+      border-radius: var(--radius);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     }
-
+    
     .analytics-info h3 {
       margin-bottom: 35px;
       font-size: 2.2rem;
     }
-
+    
     .analytics-metric {
       margin-bottom: 35px;
       position: relative;
       padding-left: 15px;
     }
-
+    
     .analytics-metric::before {
       content: '';
       position: absolute;
@@ -490,10 +407,10 @@
       top: 0;
       bottom: 0;
       width: 3px;
-      background-color: var(--accent-color);
+      background-color: var(--accent);
       border-radius: 10px;
     }
-
+    
     .analytics-metric h4 {
       font-size: 1.1rem;
       margin-bottom: 10px;
@@ -501,44 +418,29 @@
       font-family: var(--font-main);
       font-weight: 400;
     }
-
+    
     .analytics-metric p {
       font-size: 2rem;
       font-weight: 600;
-      color: var(--text-color);
+      color: var(--text);
       margin-bottom: 5px;
     }
-
-    /* Photography Showcase */
-    .photography {
-      background-color: #fff;
-      position: relative;
-    }
-
-    .photography::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: linear-gradient(to bottom, var(--secondary-color), #fff);
-    }
-
+    
+    /* Photography Grid */
     .photo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
     }
-
+    
     .photo-item {
-      border-radius: var(--border-radius);
+      border-radius: var(--radius);
       overflow: hidden;
-      transition: all 0.5s ease;
+      transition: all 0.5s;
       position: relative;
       aspect-ratio: 1;
     }
-
+    
     .photo-item::before {
       content: '';
       position: absolute;
@@ -548,87 +450,29 @@
       height: 100%;
       background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
       opacity: 0;
-      transition: opacity 0.5s ease;
+      transition: opacity 0.5s;
       z-index: 1;
     }
-
-    .photo-item:hover::before {
-      opacity: 1;
-    }
-
+    
+    .photo-item:hover::before { opacity: 1; }
+    
     .photo-item:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     }
-
+    
     .photo-item img {
-      transition: transform 1.5s ease;
+      transition: transform 1.5s;
       height: 100%;
       width: 100%;
       object-fit: cover;
     }
-
-    .photo-item:hover img {
-      transform: scale(1.1);
-    }
-
-    /* Footer Section */
-    .footer {
-      background-color: var(--dark-bg);
-      color: white;
-      text-align: center;
-      padding: 100px 0 70px;
-      position: relative;
-    }
-
-    .footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: linear-gradient(to bottom, #fff, var(--dark-bg));
-    }
-
-    .footer h2 {
-      font-size: 3rem;
-      margin-bottom: 30px;
-      color: white;
-    }
-
-    .footer-text {
-      max-width: 650px;
-      margin: 0 auto 50px;
-      font-size: 1.2rem;
-      color: #ddd;
-    }
-
-    .footer .social-links {
-      justify-content: center;
-      margin-bottom: 50px;
-    }
-
-    .footer .social-links a {
-      color: white;
-      font-size: 1.1rem;
-    }
-
-    .footer .btn {
-      background-color: white;
-      color: var(--dark-bg);
-    }
-
-    .footer .btn:hover {
-      background-color: var(--accent-color);
-      color: white;
-    }
-
+    
+    .photo-item:hover img { transform: scale(1.1); }
+    
     /* Instagram Style Elements */
-    .insta-gradient {
-      position: relative;
-    }
-
+    .insta-gradient { position: relative; }
+    
     .insta-gradient::after {
       content: '';
       position: absolute;
@@ -639,122 +483,80 @@
       background: linear-gradient(45deg, #fd5949, #d6249f, #285AEB);
       opacity: 0;
       transition: opacity 0.3s;
-      border-radius: var(--border-radius);
+      border-radius: var(--radius);
       z-index: 1;
     }
-
-    .insta-gradient:hover::after {
-      opacity: 0.15;
-    }
-
-    .insta-username {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 500;
-      margin-bottom: 30px;
-    }
-
-    .insta-username img {
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .insta-stats {
-      display: flex;
-      gap: 30px;
-      margin-top: 15px;
-      margin-bottom: 30px;
-    }
-
-    .insta-stat {
-      text-align: center;
-    }
-
-    .insta-stat-number {
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-
-    .insta-stat-label {
-      font-size: 0.9rem;
-      color: var(--light-text);
-    }
-
+    
+    .insta-gradient:hover::after { opacity: 0.15; }
+    
     .insta-like-btn {
       display: flex;
       align-items: center;
       gap: 5px;
-      color: var(--text-color);
+      color: var(--text);
       font-size: 0.9rem;
       margin-top: 10px;
     }
-
+    
     .insta-like-btn i {
-      color: var(--accent-color);
+      color: var(--accent);
       font-size: 1.1rem;
     }
-
-    /* Media Queries */
-    @media (max-width: 1200px) {
-      .section {
-        padding: 100px 0;
-      }
-      
-      .hero-text h1 {
-        font-size: 3.5rem;
-      }
-      
-      .video-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      }
+    
+    /* Footer */
+    .footer h2 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      color: white;
     }
     
+    .footer-text {
+      max-width: 650px;
+      margin: 0 auto 50px;
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+    
+    .footer .social-links {
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+    
+    .footer .social-links a { color: white; }
+    
+    .footer .btn {
+      background-color: white;
+      color: var(--dark);
+    }
+    
+    .footer .btn:hover {
+      background-color: var(--accent);
+      color: white;
+    }
+    
+    /* Media Queries */
     @media (max-width: 992px) {
-      .hero-content,
-      .about-content,
-      .analytics-content {
+      .two-col {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 40px;
       }
-
-      .hero-text,
-      .about-text {
-        padding: 0;
+      
+      .hero-text, .about-text {
         text-align: center;
       }
-
-      .social-links {
-        justify-content: center;
-      }
-
-      .hero-images {
-        max-width: 700px;
-        margin: 0 auto;
-      }
-
-      .analytics-videos {
-        max-width: 700px;
+      
+      .social-links { justify-content: center; }
+      
+      .analytics-videos, .analytics-info {
+        max-width: 600px;
         margin: 0 auto;
       }
       
-      .analytics-info {
-        max-width: 700px;
-        margin: 0 auto;
-      }
+      .section-title { font-size: 2.2rem; }
       
-      .section-title {
-        font-size: 2.2rem;
-      }
-      
-      .about-text h2,
-      .footer h2 {
-        font-size: 2.5rem;
-      }
+      .about-text h2, .footer h2 { font-size: 2.5rem; }
     }
-
+    
     @media (max-width: 768px) {
       .nav-links {
         position: fixed;
@@ -768,96 +570,61 @@
         justify-content: center;
         gap: 40px;
         transition: left 0.3s;
+        z-index: 999;
       }
-
-      .nav-links.active {
-        left: 0;
-      }
-
-      .nav-links li {
-        margin: 0;
-      }
-
-      .hamburger {
-        display: block;
-      }
-
-      .section {
-        padding: 80px 0;
-      }
-
-      .section-title {
-        margin-bottom: 50px;
-      }
-
+      
+      .nav-links.active { left: 0; }
+      .nav-links li { margin: 0; }
+      .hamburger { display: block; }
+      
+      .section { padding: 60px 0; }
+      
       .video-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 40px;
-      }
-
-      .analytics-videos {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
       }
       
-      .analytics-metric p {
-        font-size: 1.8rem;
+      .iphone-mockup {
+        max-width: 160px;
       }
       
-      .hero-text h1 {
-        font-size: 3rem;
-      }
+      .analytics-videos { grid-template-columns: 1fr; }
+      .analytics-metric p { font-size: 1.8rem; }
+      .hero-text h1 { font-size: 3rem; }
     }
-
+    
     @media (max-width: 576px) {
-      .hero-images,
+      .hero-text h1 { font-size: 2.5rem; }
+      .hero-text h2 { font-size: 1.3rem; }
+      
+      .about-text h2, .section-title, .footer h2 { font-size: 2rem; }
+      .about-text p, .hero-text p { font-size: 1rem; }
+      
+      .analytics-info { padding: 30px; }
+      .analytics-info h3 { font-size: 1.8rem; }
+      .analytics-metric p { font-size: 1.5rem; }
+      .footer-text { font-size: 1.1rem; }
+      
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+      
+      .iphone-mockup {
+        max-width: 140px;
+      }
+      
       .photo-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-text h1 {
-        font-size: 2.5rem;
-      }
-      
-      .hero-text h2 {
-        font-size: 1.3rem;
-      }
-
-      .about-text h2,
-      .section-title,
-      .footer h2 {
-        font-size: 2rem;
-      }
-      
-      .about-text p,
-      .hero-text p {
-        font-size: 1rem;
-      }
-      
-      .analytics-info {
-        padding: 30px;
-      }
-      
-      .analytics-info h3 {
-        font-size: 1.8rem;
-      }
-      
-      .analytics-metric p {
-        font-size: 1.5rem;
-      }
-      
-      .footer-text {
-        font-size: 1.1rem;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
     <div class="container">
-      <a href="#" class="logo">Emma</a>
+      <a href="#" class="logo">Iripoliri</a>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About Me</a></li>
@@ -875,14 +642,14 @@
   <!-- Hero Section -->
   <section id="home" class="hero section">
     <div class="container">
-      <div class="hero-content">
+      <div class="two-col hero-content">
         <div class="hero-text">
-          <h1>Emma Johnson</h1>
+          <h1>Irina Poletaeva</h1>
           <h2>UGC & Travel Content Creator</h2>
           <p>Specialized in <strong>Travel, Culture, Lifestyle</strong> content that captures authentic experiences and inspires wanderlust.</p>
           <div class="insta-username">
-            <img src="/api/placeholder/100/100" alt="Profile Picture">
-            <span>@travelwithemma</span>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDyjyD5cVNC7toRXiL4P5Tp-rnULvafvCDhg&s" alt="Profile Picture">
+            <span>@iripoliri</span>
           </div>
           <div class="insta-stats">
             <div class="insta-stat">
@@ -890,7 +657,7 @@
               <div class="insta-stat-label">posts</div>
             </div>
             <div class="insta-stat">
-              <div class="insta-stat-number">120K</div>
+              <div class="insta-stat-number">2200</div>
               <div class="insta-stat-label">followers</div>
             </div>
             <div class="insta-stat">
@@ -899,16 +666,16 @@
             </div>
           </div>
           <div class="social-links">
-            <a href="mailto:emma@example.com"><i class="fas fa-envelope"></i> emma@example.com</a>
-            <a href="https://instagram.com/username" target="_blank"><i class="fab fa-instagram"></i> @travelwithemma</a>
+            <a href="mailto:irina.poletaeva.97@mail.ru"><i class="fas fa-envelope"></i>irina.poletaeva.97@mail.ru</a>
+            <a href="https://instagram.com/iripoliri" target="_blank"><i class="fab fa-instagram"></i> @iripoliri</a>
           </div>
         </div>
         <div class="hero-images">
           <div class="hero-img insta-gradient">
-            <img src="/api/placeholder/400/500" alt="Emma Johnson Portrait">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMdviQp0L_Nxkq0Zz-I6x3t_AIncBIvPsDKA&s" alt="Irina Portrait">
           </div>
           <div class="hero-img insta-gradient">
-            <img src="/api/placeholder/400/500" alt="Emma Johnson Traveling">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQghr6SWEUL1f4Wg452VCKaGSAQiGN9H98Fxg&s" alt="Irina Traveling">
           </div>
         </div>
       </div>
@@ -919,15 +686,14 @@
   <section id="about" class="about section">
     <div class="container">
       <h2 class="section-title">About Me</h2>
-      <div class="about-content">
+      <div class="two-col about-content">
         <div class="about-img insta-gradient">
-          <img src="/api/placeholder/500/600" alt="Emma Johnson">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLHk5Q60ZVeGDJuQfiUtwhb_RsVYivfqpeGw&s" alt="Irina">
         </div>
         <div class="about-text">
-          <h2>Hi, I'm Emma</h2>
+          <h2>Hi, I'm Irina</h2>
           <p>As a passionate UGC creator and travel enthusiast, I've spent the last five years creating authentic, engaging content for luxury hotels, travel brands, and hospitality businesses worldwide.</p>
           <p>My approach combines genuine experiences with strategic storytelling, helping brands connect with their audience through relatable, aspirational content that showcases their unique offerings.</p>
-          <p>Having collaborated with boutique hotels, international resorts, and leading booking platforms, I understand the hospitality industry's needs and how to highlight what makes each property special.</p>
           <div class="insta-like-btn">
             <i class="fas fa-heart"></i>
             <span>8,742 likes</span>
@@ -942,47 +708,41 @@
   <section id="ugc-work" class="ugc-work section">
     <div class="container">
       <h2 class="section-title">PREVIOUS UGC WORK</h2>
-      <h3 class="collabs-title">AIRBNB / VILLA COLLABS</h3>
       <div class="video-grid">
-        <!-- Video 1 -->
         <div class="iphone-mockup">
           <div class="video-placeholder">
-            <img src="/api/placeholder/280/500" alt="UGC Video 1" class="video-thumbnail">
+            <video class="video-thumbnail" playsinline>
+              <source src="https://iripoliri-ugc.b-cdn.net/IMG_5002.MOV" type="video/mp4">
+            </video>
             <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
         </div>
-        <!-- Video 2 -->
         <div class="iphone-mockup">
           <div class="video-placeholder">
-            <img src="/api/placeholder/280/500" alt="UGC Video 2" class="video-thumbnail">
+            <video class="video-thumbnail" playsinline>
+              <source src="https://iripoliri-ugc.b-cdn.net/sorry_on_phone.MOV" type="video/mp4">
+            </video>
             <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
         </div>
-        <!-- Video 3 -->
+      </div>
+    </div>
+    <div class="container">
+      <h2 class="section-title">AIRBNB COLLAB</h2>
+      <div class="video-grid">
         <div class="iphone-mockup">
           <div class="video-placeholder">
-            <img src="/api/placeholder/280/500" alt="UGC Video 3" class="video-thumbnail">
+            <video class="video-thumbnail" playsinline>
+              <source src="https://iripoliri-ugc.b-cdn.net/IMG_5002.MOV" type="video/mp4">
+            </video>
             <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
         </div>
-        <!-- Video 4 -->
         <div class="iphone-mockup">
           <div class="video-placeholder">
-            <img src="/api/placeholder/280/500" alt="UGC Video 4" class="video-thumbnail">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-          </div>
-        </div>
-        <!-- Video 5 -->
-        <div class="iphone-mockup">
-          <div class="video-placeholder">
-            <img src="/api/placeholder/280/500" alt="UGC Video 5" class="video-thumbnail">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-          </div>
-        </div>
-        <!-- Video 6 -->
-        <div class="iphone-mockup">
-          <div class="video-placeholder">
-            <img src="/api/placeholder/280/500" alt="UGC Video 6" class="video-thumbnail">
+            <video class="video-thumbnail" playsinline>
+              <source src="https://iripoliri-ugc.b-cdn.net/sorry_on_phone.MOV" type="video/mp4">
+            </video>
             <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
         </div>
@@ -994,19 +754,90 @@
   <section id="instagram" class="instagram-analytics section">
     <div class="container">
       <h2 class="section-title">Instagram Analytics</h2>
-      <div class="analytics-content">
+      <div class="two-col analytics-content">
         <div class="analytics-videos">
-          <!-- Instagram Video 1 -->
           <div class="insta-video insta-gradient">
-            <img src="/api/placeholder/300/500" alt="Instagram Video 1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvYJ4CqqAcYFaHaH6DClAn6mf2csqxbVtDig&s" alt="Instagram Video 1">
             <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
-          <!-- Instagram Video 2 -->
           <div class="insta-video insta-gradient">
-            <img src="/api/placeholder/300/500" alt="Instagram Video 2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX1F6OZ1151XbZdsjav9W9k8Qzb2lWtnMx9w&s" alt="Instagram Video 2">
             <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
-          <!-- Instagram Video 3 -->
-          <div class="insta-video insta-gradient">
-            <img src="/api/placeholder/300/500" alt="Instagram Video 3">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="analytics-info">
+          <h3>Growth & Engagement</h3>
+          <div class="analytics-metric">
+            <h4>Average Engagement Rate</h4>
+            <p>4.8%</p>
+          </div>
+          <div class="analytics-metric">
+            <h4>Reach Per Post</h4>
+            <p>23.5K</p>
+          </div>
+          <div class="analytics-metric">
+            <h4>Follower Growth (Monthly)</h4>
+            <p>+2.7K</p>
+          </div>
+          <div class="analytics-metric">
+            <h4>Audience Demographics</h4>
+            <p>25-34 (68%)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photography Section -->
+  <section id="photography" class="photography section">
+    <div class="container">
+      <h2 class="section-title">Photography Portfolio</h2>
+      <div class="photo-grid">
+        <div class="photo-item insta-gradient">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCptnuY5_lsDb4dNeN5nixQI4vtLSJC06ePg&s" alt="Photography 1">
+        </div>
+        <div class="photo-item insta-gradient">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCptnuY5_lsDb4dNeN5nixQI4vtLSJC06ePg&s" alt="Photography 2">
+        </div>
+        <div class="photo-item insta-gradient">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCptnuY5_lsDb4dNeN5nixQI4vtLSJC06ePg&s" alt="Photography 3">
+        </div>
+        <div class="photo-item insta-gradient">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCptnuY5_lsDb4dNeN5nixQI4vtLSJC06ePg&s" alt="Photography 4">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <section id="contact" class="footer">
+    <div class="container">
+      <h2>Work With Me</h2>
+      <p class="footer-text">Ready to create authentic, engaging content for your brand? Let's collaborate on your next UGC campaign and bring your vision to life.</p>
+      <div class="social-links">
+        <a href="mailto:emma@example.com"><i class="fas fa-envelope"></i> emma@example.com</a>
+        <a href="https://instagram.com/username" target="_blank"><i class="fab fa-instagram"></i> @travelwithemma</a>
+      </div>
+      <a href="mailto:emma@example.com" class="btn">Contact Me</a>
+    </div>
+  </section>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    // filepath: /home/isham/projects/website_ugc/ugc.html
+    document.querySelectorAll('.video-thumbnail').forEach(video => {
+      video.addEventListener('click', function () {
+        if (this.paused || this.ended) {
+          this.play();
+        } else {
+          this.pause();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

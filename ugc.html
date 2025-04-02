@@ -63,7 +63,7 @@
     }
     
     .section {
-      padding: 120px 0; /* Increased padding-top from 100px to 120px */
+      padding: 100px 0;
       position: relative;
     }
     
@@ -89,13 +89,13 @@
       background-color: var(--dark);
       color: white;
       text-align: center;
-      padding: 80px 0 50px;
+      padding: 100px 0 70px;
     }
     
     /* Common Components */
     .section-title {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 70px;
       font-size: 2.5rem;
       letter-spacing: 1px;
       position: relative;
@@ -298,9 +298,9 @@
     
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr); /* Set 4 videos per row */
-      gap: 30px; /* Maintain spacing between videos */
-      margin-bottom: 50px;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 50px;
+      margin-bottom: 70px;
     }
     
     .iphone-mockup {
@@ -312,7 +312,7 @@
       width: 100%;
       padding-bottom: 200%;
       margin: 0 auto;
-      max-width: 280px;
+      max-width: 300px;
       transition: all 0.5s;
     }
     
@@ -327,7 +327,7 @@
       width: 88%;
       height: 76%;
       background-color: #222;
-      border-radius: 5px;
+      border-radius: 15px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -338,7 +338,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      cursor: pointer;
+      transition: transform 8s;
+      cursor: pointer; /* Add pointer cursor */
     }
     
     .play-icon {
@@ -355,9 +356,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      opacity: 0.8;
-      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s;
     }
+    
+    .iphone-mockup:hover .play-icon { opacity: 1; }
     
     /* Instagram Analytics */
     .analytics-videos {
@@ -383,7 +386,7 @@
     .insta-video:hover img { transform: scale(1.1); }
     
     .analytics-info {
-      padding: 40px;
+      padding: 50px;
       background-color: white;
       border-radius: var(--radius);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
@@ -429,8 +432,8 @@
     /* Photography Grid */
     .photo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
     }
     
     .photo-item {
@@ -538,17 +541,18 @@
     @media (max-width: 992px) {
       .two-col {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 60px;
       }
       
       .hero-text, .about-text {
+        padding: 0;
         text-align: center;
       }
       
       .social-links { justify-content: center; }
       
-      .analytics-videos, .analytics-info {
-        max-width: 600px;
+      .hero-images, .analytics-videos, .analytics-info {
+        max-width: 700px;
         margin: 0 auto;
       }
       
@@ -570,22 +574,18 @@
         justify-content: center;
         gap: 40px;
         transition: left 0.3s;
-        z-index: 999;
       }
       
       .nav-links.active { left: 0; }
       .nav-links li { margin: 0; }
       .hamburger { display: block; }
       
-      .section { padding: 60px 0; }
+      .section { padding: 80px 0; }
+      .section-title { margin-bottom: 50px; }
       
       .video-grid {
-        grid-template-columns: repeat(4, 1fr); /* Ensure 4 videos per row */
-        gap: 15px; /* Adjust spacing if needed */
-      }
-      
-      .iphone-mockup {
-        max-width: 160px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 40px;
       }
       
       .analytics-videos { grid-template-columns: 1fr; }
@@ -594,6 +594,7 @@
     }
     
     @media (max-width: 576px) {
+      .hero-images, .photo-grid { grid-template-columns: 1fr; }
       .hero-text h1 { font-size: 2.5rem; }
       .hero-text h2 { font-size: 1.3rem; }
       
@@ -604,28 +605,6 @@
       .analytics-info h3 { font-size: 1.8rem; }
       .analytics-metric p { font-size: 1.5rem; }
       .footer-text { font-size: 1.1rem; }
-      
-      .video-grid {
-        grid-template-columns: repeat(4, 1fr); /* Ensure 4 videos per row */
-        gap: 10px; /* Adjust spacing for smaller screens */
-      }
-      
-      .iphone-mockup {
-        max-width: 140px;
-      }
-      
-      .photo-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* Optional: Fine-tune specific sections if needed */
-    #about {
-      padding-top: 140px; /* Add extra space for the "About Me" section */
-    }
-
-    #instagram {
-      padding-top: 140px; /* Add extra space for the "Instagram Analytics" section */
     }
   </style>
 </head>
@@ -675,16 +654,16 @@
             </div>
           </div>
           <div class="social-links">
-            <a href="mailto:irina.poletaeva.97@mail.ru"><i class="fas fa-envelope"></i>irina.poletaeva.97@mail.ru</a>
-            <a href="https://instagram.com/iripoliri" target="_blank"><i class="fab fa-instagram"></i> @iripoliri</a>
+            <a href="mailto:emma@example.com"><i class="fas fa-envelope"></i>irina.poletaeva.97@mail.ru</a>
+            <a href="https://instagram.com/username" target="_blank"><i class="fab fa-instagram"></i> @iripoliri</a>
           </div>
         </div>
         <div class="hero-images">
           <div class="hero-img insta-gradient">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMdviQp0L_Nxkq0Zz-I6x3t_AIncBIvPsDKA&s" alt="Irina Portrait">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMdviQp0L_Nxkq0Zz-I6x3t_AIncBIvPsDKA&s" alt="Emma Johnson Portrait">
           </div>
           <div class="hero-img insta-gradient">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQghr6SWEUL1f4Wg452VCKaGSAQiGN9H98Fxg&s" alt="Irina Traveling">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQghr6SWEUL1f4Wg452VCKaGSAQiGN9H98Fxg&s" alt="Emma Johnson Traveling">
           </div>
         </div>
       </div>
@@ -697,12 +676,13 @@
       <h2 class="section-title">About Me</h2>
       <div class="two-col about-content">
         <div class="about-img insta-gradient">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLHk5Q60ZVeGDJuQfiUtwhb_RsVYivfqpeGw&s" alt="Irina">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLHk5Q60ZVeGDJuQfiUtwhb_RsVYivfqpeGw&s" alt="Emma Johnson">
         </div>
         <div class="about-text">
           <h2>Hi, I'm Irina</h2>
           <p>As a passionate UGC creator and travel enthusiast, I've spent the last five years creating authentic, engaging content for luxury hotels, travel brands, and hospitality businesses worldwide.</p>
           <p>My approach combines genuine experiences with strategic storytelling, helping brands connect with their audience through relatable, aspirational content that showcases their unique offerings.</p>
+          <p>Having collaborated with boutique hotels, international resorts, and leading booking platforms, I understand the hospitality industry's needs and how to highlight what makes each property special.</p>
           <div class="insta-like-btn">
             <i class="fas fa-heart"></i>
             <span>8,742 likes</span>
@@ -718,76 +698,48 @@
     <div class="container">
       <h2 class="section-title">PREVIOUS UGC WORK</h2>
       <div class="video-grid">
-        <div class="iphone-mockup">
-          <div class="video-placeholder">
-            <video class="video-thumbnail" playsinline>
-              <source src="https://iripoliri-ugc.b-cdn.net/IMG_5002.MOV" type="video/mp4">
-            </video>
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-          </div>
+            <!-- 6 Video Mockups -->
+            <div class="iphone-mockup">
+                <div class="video-placeholder">
+                    <video class="video-thumbnail" controls>
+                        <source src="https://iripoliri-ugc.b-cdn.net/IMG_5002.MOV" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="iphone-mockup">
+                <div class="video-placeholder">
+                    <video class="video-thumbnail" controls>
+                        <source src="https://iripoliri-ugc.b-cdn.net/sorry_on_phone.MOV" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
         </div>
-        <div class="iphone-mockup">
-          <div class="video-placeholder">
-            <video class="video-thumbnail" playsinline>
-              <source src="https://iripoliri-ugc.b-cdn.net/sorry_on_phone.MOV" type="video/mp4">
-            </video>
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-          </div>
-        </div>
-        <div class="iphone-mockup">
-          <div class="video-placeholder">
-            <video class="video-thumbnail" playsinline>
-              <source src="https://iripoliri-ugc.b-cdn.net/IMG_5002.MOV" type="video/mp4">
-            </video>
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-          </div>
-        </div>
-        <div class="iphone-mockup">
-          <div class="video-placeholder">
-            <video class="video-thumbnail" playsinline>
-              <source src="https://iripoliri-ugc.b-cdn.net/sorry_on_phone.MOV" type="video/mp4">
-            </video>
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="container">
-      <h2 class="section-title">AIRBNB COLLAB</h2>
-      <div class="video-grid">
-        <div class="iphone-mockup">
-          <div class="video-placeholder">
-            <video class="video-thumbnail" playsinline>
-              <source src="https://iripoliri-ugc.b-cdn.net/IMG_5002.MOV" type="video/mp4">
-            </video>
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-          </div>
-        </div>
-        <div class="iphone-mockup">
-          <div class="video-placeholder">
-            <video class="video-thumbnail" playsinline>
-              <source src="https://iripoliri-ugc.b-cdn.net/sorry_on_phone.MOV" type="video/mp4">
-            </video>
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-          </div>
-        </div>
-        <div class="iphone-mockup">
-          <div class="video-placeholder">
-            <video class="video-thumbnail" playsinline>
-              <source src="https://iripoliri-ugc.b-cdn.net/IMG_5002.MOV" type="video/mp4">
-            </video>
-            <div class="play-icon"><i class="fas fa-play"></i></div>
+        <h2 class="section-title">AIRBNB COLLAB</h2>
+        <div class="video-grid">
+              <!-- 6 Video Mockups -->
+              <div class="iphone-mockup">
+                  <div class="video-placeholder">
+                      <video class="video-thumbnail" controls>
+                          <source src="https://iripoliri-ugc.b-cdn.net/IMG_5002.MOV" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                  </div>
+              </div>
+              <div class="iphone-mockup">
+                  <div class="video-placeholder">
+                      <video class="video-thumbnail" controls>
+                          <source src="https://iripoliri-ugc.b-cdn.net/sorry_on_phone.MOV" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                  </div>
+              </div>
           </div>
       </div>
-      <div class="iphone-mockup">
-        <div class="video-placeholder">
-          <video class="video-thumbnail" playsinline>
-            <source src="https://iripoliri-ugc.b-cdn.net/IMG_5002.MOV" type="video/mp4">
-          </video>
-          <div class="play-icon"><i class="fas fa-play"></i></div>
-        </div>
-    </div>
-    </div>
+    
   </section>
 
   <!-- Instagram Analytics Section -->
@@ -833,6 +785,7 @@
     <div class="container">
       <h2 class="section-title">Photography Portfolio</h2>
       <div class="photo-grid">
+        <!-- 6 Photo Items -->
         <div class="photo-item insta-gradient">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCptnuY5_lsDb4dNeN5nixQI4vtLSJC06ePg&s" alt="Photography 1">
         </div>
@@ -844,6 +797,12 @@
         </div>
         <div class="photo-item insta-gradient">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCptnuY5_lsDb4dNeN5nixQI4vtLSJC06ePg&s" alt="Photography 4">
+        </div>
+        <div class="photo-item insta-gradient">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCptnuY5_lsDb4dNeN5nixQI4vtLSJC06ePg&s" alt="Photography 5">
+        </div>
+        <div class="photo-item insta-gradient">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCptnuY5_lsDb4dNeN5nixQI4vtLSJC06ePg&s" alt="Photography 6">
         </div>
       </div>
     </div>
@@ -870,15 +829,11 @@
 
     // filepath: /home/isham/projects/website_ugc/ugc.html
     document.querySelectorAll('.video-thumbnail').forEach(video => {
-      const playIcon = video.closest('.video-placeholder').querySelector('.play-icon');
-
       video.addEventListener('click', function () {
         if (this.paused || this.ended) {
           this.play();
-          playIcon.style.opacity = 0;
         } else {
           this.pause();
-          playIcon.style.opacity = 0.8;
         }
       });
     });
