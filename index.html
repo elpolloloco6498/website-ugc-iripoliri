@@ -9,13 +9,13 @@
   <style>
     /* Global Variables */
     :root {
-      --primary: #f5f5f5;
-      --secondary: #fcf0f2;
+      --primary: #516253;
+      --secondary: #f7f7f5;
       --accent: #ff7b93;
-      --text: #262626;
+      --text: #516253;
       --light-text: #8e8e8e;
       --dark: #121212;
-      --radius: 12px;
+      --radius: 5px;
       --font-main: 'Poppins', sans-serif;
       --font-accent: 'Italiana', serif;
     }
@@ -79,8 +79,8 @@
     
     /* Section Backgrounds */
     .hero { --bg: #fff; --prev-bg: #fff; }
-    .about { --bg: var(--primary); --prev-bg: #fff; }
-    .ugc-work { --bg: #fff; --prev-bg: var(--primary); }
+    .about { --bg: var(--secondary); --prev-bg: #fff; }
+    .ugc-work { --bg: #fff; --prev-bg: var(--secondary); }
     .instagram-analytics { --bg: var(--secondary); --prev-bg: #fff; }
     .photography { --bg: #fff; --prev-bg: var(--secondary); }
     .footer { 
@@ -145,9 +145,9 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: rgba(255, 255, 255, 0.98);
+      background-color: white; /* Use primary color */
       z-index: 1000;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 2px 15px rgba(var(--dark), 0.04); /* Use dark color */
       padding: 18px 0;
     }
     
@@ -172,7 +172,7 @@
     .nav-links li { margin-left: 40px; }
     
     .nav-links a {
-      color: var(--text);
+      color: var(--text); /* Use text color */
       font-weight: 400;
       position: relative;
       font-size: 0.95rem;
@@ -202,11 +202,12 @@
       font-size: 4rem;
       margin-bottom: 30px;
       line-height: 1.1;
+      color: var(--text); /* Use text color */
     }
     
     .hero-text h2 {
       font-size: 1.5rem;
-      color: var(--light-text);
+      color: var(--light-text); /* Use light text color */
       margin-bottom: 35px;
       font-weight: 300;
       font-family: var(--font-main);
@@ -221,13 +222,13 @@
     .hero-img {
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 35px rgba(var(--dark), 0.1); /* Use dark color */
       transition: all 0.5s;
     }
     
     .hero-img:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 20px 40px rgba(var(--dark), 0.15); /* Use dark color */
     }
     
     .hero-img:nth-child(1) { transform: translateY(-30px); }
@@ -263,11 +264,12 @@
     .insta-stat-number {
       font-weight: 600;
       font-size: 1.1rem;
+      color: var(--text); /* Use text color */
     }
     
     .insta-stat-label {
       font-size: 0.9rem;
-      color: var(--light-text);
+      color: var(--light-text); /* Use light text color */
     }
     
     .social-links {
@@ -280,13 +282,13 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      color: var(--text);
+      color: var(--text); /* Use text color */
       transition: color 0.3s;
       font-size: 0.95rem;
     }
     
     .social-links a i { font-size: 1.2rem; }
-    .social-links a:hover { color: var(--accent); }
+    .social-links a:hover { color: var(--accent); /* Use accent color */ }
     
     /* UGC Work Section */
     .collabs-title {
@@ -326,7 +328,7 @@
       left: 6%;
       width: 88%;
       height: 76%;
-      background-color: #222;
+      background-color: var(--dark); /* Use dark color */
       border-radius: 5px;
       display: flex;
       justify-content: center;
@@ -348,7 +350,7 @@
       transform: translate(-50%, -50%);
       color: white;
       font-size: 2rem;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(var(--dark), 0.5); /* Use dark color */
       border-radius: 50%;
       width: 60px;
       height: 60px;
@@ -384,9 +386,9 @@
     
     .analytics-info {
       padding: 40px;
-      background-color: white;
+      background-color: var(--secondary); /* Use primary color */
       border-radius: var(--radius);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 20px 40px rgba(var(--dark), 0.08); /* Use dark color */
     }
     
     .analytics-info h3 {
@@ -407,14 +409,14 @@
       top: 0;
       bottom: 0;
       width: 3px;
-      background-color: var(--accent);
+      background-color: var(--accent); /* Use accent color */
       border-radius: 10px;
     }
     
     .analytics-metric h4 {
       font-size: 1.1rem;
       margin-bottom: 10px;
-      color: var(--light-text);
+      color: var(--light-text); /* Use light text color */
       font-family: var(--font-main);
       font-weight: 400;
     }
@@ -422,7 +424,7 @@
     .analytics-metric p {
       font-size: 2rem;
       font-weight: 600;
-      color: var(--text);
+      color: var(--text); /* Use text color */
       margin-bottom: 5px;
     }
     
@@ -448,7 +450,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
+      background: linear-gradient(to bottom, rgba(var(--dark), 0), rgba(var(--dark), 0.3)); /* Use dark color */
       opacity: 0;
       transition: opacity 0.5s;
       z-index: 1;
@@ -458,7 +460,7 @@
     
     .photo-item:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 30px rgba(var(--dark), 0.1); /* Use dark color */
     }
     
     .photo-item img {
@@ -526,11 +528,11 @@
     
     .footer .btn {
       background-color: white;
-      color: var(--dark);
+      color: var(--dark); /* Use dark color */
     }
     
     .footer .btn:hover {
-      background-color: var(--accent);
+      background-color: var(--accent); /* Use accent color */
       color: white;
     }
     
