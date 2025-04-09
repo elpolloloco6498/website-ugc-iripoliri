@@ -231,6 +231,42 @@
       transition: all 0.5s;
       position: relative;
     }
+
+    /* Default styling for larger screens */
+    .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translate(-50%, -50%);
+      writing-mode: vertical-rl; /* Enables vertical text flow */
+      text-orientation: upright; /* Ensures characters are upright */
+      font-size: 1.5rem; /* Default font size */
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      pointer-events: none;
+      background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+      backdrop-filter: blur(10px); /* Applies blur effect */
+      padding: 10px; /* Adds padding for better readability */
+      border-radius: 10px; /* Optional: Rounds the corners */
+      border: 1px solid var(--primary); /* Adds a border */
+    }
+
+    /* Adjust for tablets (max-width: 768px) */
+    @media (max-width: 768px) {
+      .text-overlay {
+        font-size: 1.2rem; /* Reduce font size */
+        padding: 8px; /* Adjust padding */
+      }
+    }
+
+    /* Adjust for mobile devices (max-width: 576px) */
+    @media (max-width: 576px) {
+      .text-overlay {
+        font-size: 1rem; /* Further reduce font size */
+        padding: 6px; /* Adjust padding */
+      }
+    }
     
     .hero-img:hover {
       transform: translateY(-10px);
@@ -339,7 +375,7 @@
       left: 6%;
       width: 88%;
       height: 76%;
-      background-color: var(--dark); /* Use dark color */
+      background-color: transparent; /* Use dark color */
       border-radius: 5px;
       display: flex;
       justify-content: center;
@@ -352,6 +388,7 @@
       height: 100%;
       object-fit: cover;
       cursor: pointer;
+      background-color: transparent;
     }
     
     .play-icon {
@@ -697,39 +734,21 @@
         <div class="hero-images">
           <div class="hero-img insta-gradient">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_pic1.jpg" alt="Irina Portrait">
-            <!-- <div class="text-overlay">TEST 1</div> -->
+            <div class="text-overlay">BRANDS</div>
           </div>
           <div class="hero-img insta-gradient">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_pic6.jpg" alt="Irina Traveling">
-            <!-- <div class="text-overlay">TEST2</div> -->
+            <div class="text-overlay">HOTELS</div>
           </div>
           <div class="hero-img insta-gradient">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_pic3.jpg" alt="Irina Portrait">
-            <!-- <div class="text-overlay">TEST3</div> -->
+            <div class="text-overlay">TRAVEL</div>
           </div>
           <div class="hero-img insta-gradient">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_pic4.jpg" alt="Irina Traveling">
-            <!-- <div class="text-overlay">TEST4</div> -->
+            <div class="text-overlay">RESTOS</div>
           </div>
         </div>
-        <!-- <style>
-          .text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  writing-mode: vertical-rl; /* Enables vertical text flow */
-  text-orientation: upright; /* Ensures characters are upright */
-  font-size: 1.5rem;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  pointer-events: none;
-}
-          .hero-img {
-            position: relative;
-          }
-        </style> -->
       </div>
     </div>
   </section>
