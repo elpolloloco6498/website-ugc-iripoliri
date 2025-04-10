@@ -10,7 +10,7 @@
     /* Global Variables */
     :root {
       --primary: #516253;
-      --secondary: #ecefff;
+      --secondary: #10838c;
       --accent: #152cb3;
       --text: #1e296b;
       --light-text: #686b80;
@@ -83,11 +83,11 @@
     }
     
     /* Section Backgrounds */
-    .hero { --bg: #fff; --prev-bg: #fff; }
-    .about { --bg: var(--secondary); --prev-bg: #fff; }
-    .ugc-work { --bg: #fff; --prev-bg: var(--secondary); width: 100%; padding: 0;}
-    .instagram-analytics { --bg: var(--secondary); --prev-bg: #fff; }
-    .photography { --bg: #fff; --prev-bg: var(--secondary); }
+    .hero { }
+    .about {  }
+    .ugc-work { width: 100%; padding: 0;}
+    .instagram-analytics {  }
+    .photography {  }
     .footer { 
       --bg: var(--dark); 
       --prev-bg: #fff;
@@ -204,10 +204,19 @@
     
     /* Hero Section */
     .hero-text h1 {
-      font-size: 4rem;
-      margin-bottom: 30px;
+      font-size: 10rem;
       line-height: 1.1;
       color: var(--text); /* Use text color */
+    }
+
+    .upper-title {
+      margin-bottom: 3.5rem !important;
+      line-height: 0 !important;
+      margin-top: 100px;
+    }
+
+    .lower-title {
+      padding-left: 70px
     }
     
     .hero-text h2 {
@@ -222,6 +231,8 @@
       display: grid;
       grid-template-columns: repeat(2, 2fr);
       gap: 30px;
+      width: 80%;
+      margin: auto;
     }
     
     .hero-img {
@@ -269,8 +280,10 @@
     
     .hero-img:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(var(--dark), 0.15); /* Use dark color */
+      box-shadow: 0 15px 40px rgba(var(--primary), 0.15);
     }
+
+    .hero-img:hover::after { opacity: 0.5; }
     
     .hero-img:nth-child(1) { transform: translateY(0px); }
     .hero-img:nth-child(2) { transform: translateY(0px); }
@@ -335,6 +348,23 @@
     
     .social-links a i { font-size: 1.2rem; }
     .social-links a:hover { color: var(--accent); /* Use accent color */ }
+
+    /* About Section */
+    .video-aboutme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container {
+  position: relative;
+  width: 280px; /* iPhone-like width */
+  aspect-ratio: 0 / 19.5; /* Maintain the 19.5:9 aspect ratio */
+  background-color: #000; /* Black background */
+  border-radius: 30px; /* Rounded corners for iPhone look */
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
     
     /* UGC Work Section */
     .collabs-title {
@@ -441,12 +471,24 @@
       .insta-video {
         border-radius: 15px; /* Reduce border radius for tablets */
       }
+
+      .lower-title {
+        padding-left: 0px
+      }
+
+      .upper-title {
+        margin-bottom: 1rem !important;
+      }
     }
 
     /* Adjust for mobile devices (max-width: 576px) */
     @media (max-width: 576px) {
       .insta-video {
         border-radius: 10px; /* Further reduce border radius for mobile */
+      }
+
+      .upper-title {
+        margin-bottom: 1rem !important;
       }
     }
     
@@ -729,75 +771,68 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section id="home" class="hero section">
     <div class="container">
       <div class="two-col hero-content">
         <div class="hero-text">
-          <h1>Irina Poletaeva</h1>
+          <div>
+            <h1 class="upper-title">Irina</h1>
+            <h1 class="lower-title">Poletaeva</h1>
+          </div>
+          
           <h2>UGC & Travel Content Creator</h2>
           <p>Specialized in <strong>Travel, Culture, Lifestyle</strong> content that captures authentic experiences and inspires wanderlust.</p>
 
-          <!-- <div class="insta-stats">
-            <div class="insta-stat">
-              <div class="insta-stat-number">257</div>
-              <div class="insta-stat-label">posts</div>
-            </div>
-            <div class="insta-stat">
-              <div class="insta-stat-number">2200</div>
-              <div class="insta-stat-label">followers</div>
-            </div>
-          </div> -->
           <div class="social-links">
             <a href="https://instagram.com/iripoliri" target="_blank"><i class="fab fa-instagram"></i> @iripoliri</a>
             <a href="mailto:irina.poletaeva.97@mail.ru"><i class="fas fa-envelope"></i>irina.poletaeva.97@mail.ru</a>
           </div>
         </div>
         <div class="hero-images">
-          <div class="hero-img insta-gradient">
-            <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_pic1.jpg" alt="Irina Portrait">
-            <div class="text-overlay">BRANDS</div>
+          <div class="hero-img">
+            <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_overlay5.jpg" alt="Irina Portrait">
+            <!-- <div class="text-overlay">BRANDS</div> -->
           </div>
-          <div class="hero-img insta-gradient">
-            <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_pic6.jpg" alt="Irina Traveling">
-            <div class="text-overlay">HOTELS</div>
+          <div class="hero-img">
+            <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_overlay6.jpg" alt="Irina Traveling">
+            <!-- <div class="text-overlay">HOTELS</div> -->
           </div>
-          <div class="hero-img insta-gradient">
-            <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_pic3.jpg" alt="Irina Portrait">
-            <div class="text-overlay">TRAVEL</div>
+          <div class="hero-img">
+            <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_overlay7.jpg" alt="Irina Portrait">
+            <!-- <div class="text-overlay">TRAVEL</div> -->
           </div>
-          <div class="hero-img insta-gradient">
-            <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_pic4.jpg" alt="Irina Traveling">
-            <div class="text-overlay">RESTOS</div>
+          <div class="hero-img">
+            <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_overlay8.jpg" alt="Irina Traveling">
+            <!-- <div class="text-overlay">RESTOS</div> -->
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Me Section -->
   <section id="about" class="about section">
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <div class="two-col about-content">
-        <div class="about-img insta-gradient">
-          <img src="https://iripoliri-ugc.b-cdn.net/photos/pic_travel_temple.jpg" alt="Irina">
+        <div class="video-aboutme">
+          <div class="video-container">
+            <video class="video-thumbnail" playsinline>
+              <source src="https://iripoliri-ugc.b-cdn.net/videos/aboutme_bonjour.MOV" type="video/mp4">
+            </video>
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+          </div>
         </div>
+        
         <div class="about-text">
           <h2>Hi, I'm Irina</h2>
           <p>As a passionate UGC creator and travel enthusiast, I've spent the last five years creating authentic, engaging content for luxury hotels, travel brands, and hospitality businesses worldwide.</p>
           <p>My approach combines genuine experiences with strategic storytelling, helping brands connect with their audience through relatable, aspirational content that showcases their unique offerings.</p>
-          <div class="insta-like-btn">
-            <i class="fas fa-heart"></i>
-            <span>8,742 likes</span>
-          </div>
           <a href="#contact" class="btn">Work With Me</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- UGC Work Section -->
   <section id="ugc-work" class="ugc-work section">
     <div class="container">
       <h2 class="section-title">HOTEL COLLABS</h2>
@@ -1022,9 +1057,48 @@
         </div>
       </div>
     </div>
+
+    <div class="container">
+      <h2 class="section-title">AEStHETIC CONTENT</h2>
+      <div class="inner-container">
+        <div class="video-grid">
+          <div class="iphone-mockup">
+            <div class="video-placeholder">
+              <video class="video-thumbnail" playsinline>
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/aesthetic_bear.MOV" type="video/mp4">
+              </video>
+              <div class="play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="iphone-mockup">
+            <div class="video-placeholder">
+              <video class="video-thumbnail" playsinline>
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/aesthetic_four_seasons.MOV" type="video/mp4">
+              </video>
+              <div class="play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="iphone-mockup">
+            <div class="video-placeholder">
+              <video class="video-thumbnail" playsinline>
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/aesthetic_heart_smile.MOV" type="video/mp4">
+              </video>
+              <div class="play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="iphone-mockup">
+            <div class="video-placeholder">
+              <video class="video-thumbnail" playsinline>
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/aesthetic_snorkling.MOV" type="video/mp4">
+              </video>
+              <div class="play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Instagram Analytics Section -->
   <section id="instagram" class="instagram-analytics section">
     <div class="container">
       <h2 class="section-title">Instagram Analytics</h2>
@@ -1063,39 +1137,10 @@
             <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
         </div>
-        <!-- <div class="analytics-info">
-          <h3>Growth & Engagement</h3>
-          <div class="analytics-metric">
-            <h4>Audience Demographics</h4>
-            <p>25-34 (68%)</p>
-          </div>
-        </div> -->
       </div>
     </div>
   </section>
 
-  <!-- Photography Section -->
-  <!-- <section id="photography" class="photography section">
-    <div class="container">
-      <h2 class="section-title">Photography Portfolio</h2>
-      <div class="photo-grid">
-        <div class="photo-item insta-gradient">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCptnuY5_lsDb4dNeN5nixQI4vtLSJC06ePg&s" alt="Photography 1">
-        </div>
-        <div class="photo-item insta-gradient">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCptnuY5_lsDb4dNeN5nixQI4vtLSJC06ePg&s" alt="Photography 2">
-        </div>
-        <div class="photo-item insta-gradient">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCptnuY5_lsDb4dNeN5nixQI4vtLSJC06ePg&s" alt="Photography 3">
-        </div>
-        <div class="photo-item insta-gradient">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCptnuY5_lsDb4dNeN5nixQI4vtLSJC06ePg&s" alt="Photography 4">
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- Footer Section -->
   <section id="contact" class="footer">
     <div class="container">
       <h2>Work With Me</h2>
@@ -1110,22 +1155,30 @@
 
   <script>
     // Mobile menu toggle
-    document.querySelector('.hamburger').addEventListener('click', function() {
+    document.querySelector('.hamburger').addEventListener('click', function () {
       document.querySelector('.nav-links').classList.toggle('active');
     });
 
-    // filepath: /home/isham/projects/website_ugc/ugc.html
+    // Handle video play functionality for both setups
     document.querySelectorAll('.video-thumbnail').forEach(video => {
-      const playIcon = video.closest('.video-placeholder').querySelector('.play-icon');
+      const playIcon = video.closest('.video-container, .video-placeholder').querySelector('.play-icon');
 
-      video.addEventListener('click', function () {
-        if (this.paused || this.ended) {
-          this.play();
-          playIcon.style.opacity = 0;
+      playIcon.addEventListener('click', function () {
+        if (video.paused || video.ended) {
+          video.play();
+          playIcon.style.opacity = 0; // Hide the play icon when the video starts
         } else {
-          this.pause();
-          playIcon.style.opacity = 0.8;
+          video.pause();
+          playIcon.style.opacity = 0.8; // Show the play icon when the video is paused
         }
+      });
+
+      video.addEventListener('pause', function () {
+        playIcon.style.opacity = 0.8; // Show the play icon when the video is paused
+      });
+
+      video.addEventListener('ended', function () {
+        playIcon.style.opacity = 0.8; // Show the play icon when the video ends
       });
     });
   </script>
