@@ -87,6 +87,7 @@
     .hero { }
     .about { background-color: #f7f8ed; }
     .ugc-work { width: 100%; padding: 0;}
+    .ugc-work-2 {}
     .instagram-analytics { background-color: #f7f8ed; }
     .photography {  }
     .footer { 
@@ -440,6 +441,10 @@
     }
 
     #ugc-work .container {
+      width: 100%; /* Override to prevent shrinking */
+    }
+
+    #ugc-work-2 .container {
       width: 100%; /* Override to prevent shrinking */
     }
     
@@ -817,7 +822,7 @@
       <div class="two-col about-content">
         <div class="video-aboutme">
           <div class="video-container">
-            <video class="video-thumbnail" playsinline>
+            <video class="video-thumbnail" playsinline muted>
               <source src="https://iripoliri-ugc.b-cdn.net/videos/aboutme_bonjour.MOV" type="video/mp4">
             </video>
             <div class="play-icon"><i class="fas fa-play"></i></div>
@@ -1059,45 +1064,6 @@
       </div>
     </div>
 
-    <div class="container">
-      <h2 class="section-title">AEStHETIC CONTENT</h2>
-      <div class="inner-container">
-        <div class="video-grid">
-          <div class="iphone-mockup">
-            <div class="video-placeholder">
-              <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/aesthetic_bear.MOV" type="video/mp4">
-              </video>
-              <div class="play-icon"><i class="fas fa-play"></i></div>
-            </div>
-          </div>
-          <div class="iphone-mockup">
-            <div class="video-placeholder">
-              <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/aesthetic_four_seasons.MOV" type="video/mp4">
-              </video>
-              <div class="play-icon"><i class="fas fa-play"></i></div>
-            </div>
-          </div>
-          <div class="iphone-mockup">
-            <div class="video-placeholder">
-              <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/aesthetic_heart_smile.MOV" type="video/mp4">
-              </video>
-              <div class="play-icon"><i class="fas fa-play"></i></div>
-            </div>
-          </div>
-          <div class="iphone-mockup">
-            <div class="video-placeholder">
-              <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/aesthetic_snorkling.MOV" type="video/mp4">
-              </video>
-              <div class="play-icon"><i class="fas fa-play"></i></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <section id="instagram" class="instagram-analytics section">
@@ -1136,6 +1102,48 @@
           <div class="insta-video insta-gradient">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/analytics8.jpg" alt="Instagram Video 2">
             <div class="play-icon"><i class="fas fa-play"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ugc-work" class="ugc-work section">
+    <div class="container">
+      <h2 class="section-title">AEStHETIC CONTENT</h2>
+      <div class="inner-container">
+        <div class="video-grid">
+          <div class="iphone-mockup">
+            <div class="video-placeholder">
+              <video class="video-thumbnail" playsinline>
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/aesthetic_bear.MOV" type="video/mp4">
+              </video>
+              <div class="play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="iphone-mockup">
+            <div class="video-placeholder">
+              <video class="video-thumbnail" playsinline>
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/aesthetic_four_seasons.MOV" type="video/mp4">
+              </video>
+              <div class="play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="iphone-mockup">
+            <div class="video-placeholder">
+              <video class="video-thumbnail" playsinline>
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/aesthetic_heart_smile.MOV" type="video/mp4">
+              </video>
+              <div class="play-icon"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="iphone-mockup">
+            <div class="video-placeholder">
+              <video class="video-thumbnail" playsinline>
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/aesthetic_snorkling.MOV" type="video/mp4">
+              </video>
+              <div class="play-icon"><i class="fas fa-play"></i></div>
+            </div>
           </div>
         </div>
       </div>
