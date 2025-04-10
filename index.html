@@ -9,15 +9,16 @@
   <style>
     /* Global Variables */
     :root {
-      --primary: #516253;
-      --secondary: #10838c;
-      --accent: #152cb3;
-      --text: #1e296b;
-      --light-text: #686b80;
-      --dark: #1e296b;
+      --primary: #0fe728;
+      --secondary: #f0e110;
+      --accent: #b1c247;
+      --text: #39482a;
+      --light-text: #6c7333;
+      --dark: #39482a;
       --radius: 25px;
       --font-main: 'Poppins', sans-serif;
       --font-accent: 'Italiana', serif;
+      --bg: white;
     }
     
     /* Base Styles */
@@ -28,6 +29,7 @@
       color: var(--text);
       line-height: 1.8;
       font-weight: 300;
+      background-color: var(--bg);
     }
     
     h1, h2, h3, h4 {
@@ -79,14 +81,13 @@
       left: 0;
       right: 0;
       height: 100px;
-      background: linear-gradient(to bottom, var(--prev-bg, #fff), var(--bg, #fff));
     }
     
     /* Section Backgrounds */
     .hero { }
-    .about {  }
+    .about { background-color: #f7f8ed; }
     .ugc-work { width: 100%; padding: 0;}
-    .instagram-analytics {  }
+    .instagram-analytics { background-color: #f7f8ed; }
     .photography {  }
     .footer { 
       --bg: var(--dark); 
