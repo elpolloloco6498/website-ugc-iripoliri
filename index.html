@@ -85,7 +85,7 @@
     /* Section Backgrounds */
     .hero { }
     .about { background-color: #f7f8ed; }
-    .ugc-work { width: 100%; padding: 0;}
+    .ugc-work { width: 100%; }
     .ugc-work-2 {}
     .instagram-analytics { background-color: #f7f8ed; }
     .photography {  }
@@ -218,6 +218,26 @@
 
     .lower-title {
       padding-left: 70px
+    }
+
+    .upper-title,
+    .lower-title {
+      font-size: 6rem; /* Default size for large screens */
+      line-height: 1.1;
+    }
+
+    @media (max-width: 768px) {
+      .upper-title,
+      .lower-title {
+        font-size: 3rem; /* Adjust size for smaller tablets */
+      }
+    }
+
+    @media (max-width: 576px) {
+      .upper-title,
+      .lower-title {
+        font-size: 2.5rem; /* Adjust size for mobile devices */
+      }
     }
     
     .hero-text h2 {
@@ -365,7 +385,7 @@
   width: 280px; /* iPhone-like width */
   aspect-ratio: 0 / 19.5; /* Maintain the 19.5:9 aspect ratio */
   background-color: #000; /* Black background */
-  border-radius: 30px; /* Rounded corners for iPhone look */
+  border-radius: 10px; /* Rounded corners for iPhone look */
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Optional shadow */
 }
@@ -410,7 +430,7 @@
   display: block;
   width: 100%;
   height: auto;
-  border-radius: var(--radius);
+  border-radius: 10px;
   z-index: 1;
   pointer-events: auto; /* ✅ Allow clicking the video */
   background-color: black;
@@ -463,6 +483,10 @@
 
       .upper-title {
         margin-bottom: 1rem !important;
+      }
+
+      .video-thumbnail {
+        border-radius: 5px;
       }
     }
 
@@ -1079,6 +1103,13 @@
     // Mobile menu toggle
     document.querySelector('.hamburger').addEventListener('click', function () {
       document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function () {
+        document.querySelector('.nav-links').classList.remove('active');
+      });
     });
 
     // Handle video play functionality
