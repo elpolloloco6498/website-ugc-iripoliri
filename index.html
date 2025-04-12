@@ -410,6 +410,7 @@
   height: auto;
   z-index: 1;
   pointer-events: auto; /* ✅ Allow clicking the video */
+  background-color: black;
 }
 
 .play-icon {
@@ -1126,7 +1127,7 @@
           </div>
           <div class="iphone-mockup">
             <div class="video-placeholder">
-              <video class="video-thumbnail" playsinline preload="metadata">
+              <video class="video-thumbnail" playsinline>
               <source src="https://iripoliri-ugc.b-cdn.net/videos/aesthetic_snorkling.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
@@ -1171,7 +1172,7 @@
 
             if (video.paused || video.ended) {
               video.play();
-              playIcon.style.opacity = 0; // Hide the play icon when playing
+              playIcon.style.opacity = 0.2; // Hide the play icon when playing
             } else {
               console.log('video playing, need to pause');
               video.pause();
