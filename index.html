@@ -61,7 +61,7 @@
       width: 90%;
       max-width: 1300px;
       margin: 0 auto;
-      padding: 0 15px;
+      padding: 0px;
     }
 
     .inner-container {
@@ -75,7 +75,6 @@
     }
     
     .section::before {
-      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -233,16 +232,19 @@
       display: grid;
       grid-template-columns: repeat(2, 2fr);
       gap: 30px;
-      width: 80%;
+      width: 100%;
       margin: auto;
     }
     
     .hero-img {
-      border-radius: var(--radius);
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 15px 35px rgba(var(--dark), 0.1); /* Use dark color */
       transition: all 0.5s;
       position: relative;
+    }
+
+    .hero-img img {
+      border-radius: 0px;
     }
 
     /* Default styling for larger screens */
@@ -408,6 +410,7 @@
   display: block;
   width: 100%;
   height: auto;
+  border-radius: var(--radius);
   z-index: 1;
   pointer-events: auto; /* ✅ Allow clicking the video */
   background-color: black;
@@ -426,8 +429,6 @@
   pointer-events: auto; /* ✅ Allow clicking the icon */
 }
 
-
-
     #ugc-work .container {
       width: 100%; /* Override to prevent shrinking */
     }
@@ -442,28 +443,18 @@
       grid-template-columns: repeat(4, 1fr); /* Always 4 columns */
       gap: 30px; /* Maintain spacing between items */
     }
-    
-    .insta-video {
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      position: relative;
-      transition: all 0.5s;
-    }
 
     /* Default styling for larger screens */
     .insta-video {
-      border-radius: var(--radius); /* Default border radius */
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       position: relative;
       transition: all 0.5s;
     }
 
     /* Adjust for tablets (max-width: 768px) */
     @media (max-width: 768px) {
-      .insta-video {
-        border-radius: 15px; /* Reduce border radius for tablets */
+      .insta-video img {
+        border-radius: 10px; /* Reduce border radius for tablets */
       }
 
       .lower-title {
@@ -477,9 +468,6 @@
 
     /* Adjust for mobile devices (max-width: 576px) */
     @media (max-width: 576px) {
-      .insta-video {
-        border-radius: 10px; /* Further reduce border radius for mobile */
-      }
 
       .upper-title {
         margin-bottom: 1rem !important;
@@ -492,7 +480,6 @@
     
     .insta-video:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     }
     
     .insta-video img { transition: transform 8s; }
@@ -789,19 +776,15 @@
         <div class="hero-images">
           <div class="hero-img">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_overlay5.jpg" alt="Irina Portrait">
-            <!-- <div class="text-overlay">BRANDS</div> -->
           </div>
           <div class="hero-img">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_overlay6.jpg" alt="Irina Traveling">
-            <!-- <div class="text-overlay">HOTELS</div> -->
           </div>
           <div class="hero-img">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_overlay7.jpg" alt="Irina Portrait">
-            <!-- <div class="text-overlay">TRAVEL</div> -->
           </div>
           <div class="hero-img">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_overlay8.jpg" alt="Irina Traveling">
-            <!-- <div class="text-overlay">RESTOS</div> -->
           </div>
         </div>
       </div>
@@ -831,75 +814,59 @@
     </div>
   </section>
 
-  <!-- <section id="ugc-work" class="ugc-work section">
+  <section id="ugc-work" class="ugc-work section">
     <div class="container">
       <h2 class="section-title">HOTEL COLLABS</h2>
       <div class="inner-container">
         <div class="video-grid">
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_escape_the_hustle.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_escape_the_hustle.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_sorry_on_phone.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_sorry_on_phone.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_summer_therapy.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_summer_therapy.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_true_noise_cancellation.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_true_noise_cancellation.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_monument_1880.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_monument_1880.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_travel_is_not.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_travel_is_not.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_mtirala.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_mtirala.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_paragraph_ambiance.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/hotels_paragraph_ambiance.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -908,70 +875,54 @@
       <h2 class="section-title">BRANDS</h2>
       <div class="inner-container">
         <div class="video-grid">
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline muted>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_cute_jewelry.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline muted>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_less_problems.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline muted>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_red_heart_necklace.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_ok_guys_we_are_back.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_what_do_we_do_when_sad.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_salary_credited.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_me_after_saying.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_if_this_is_your_vibe.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -980,38 +931,30 @@
       <h2 class="section-title">HUMOR</h2>
       <div class="inner-container">
         <div class="video-grid">
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/humor_day_trip.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/humor_milk_vs_nutella.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/humor_mopped_floor.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/humor_scare_bf.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1020,87 +963,72 @@
       <h2 class="section-title">LONG REVIEWS</h2>
       <div class="inner-container">
         <div class="video-grid">
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/long_reviews_graph_tbilisi.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/long_reviews_lafamilia.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/long_reviews_monument_1880.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
-          <div class="iphone-mockup">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
                 <source src="https://iripoliri-ugc.b-cdn.net/videos/long_reviews_mtirala.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
-          </div>
         </div>
       </div>
     </div>
 
   </section>
+ 
 
   <section id="instagram" class="instagram-analytics section">
     <div class="container">
       <h2 class="section-title">Instagram Analytics</h2>
       <div class="analytics-content">
         <div class="analytics-videos">
-          <div class="insta-video insta-gradient">
+          <div class="insta-video">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/analytics2.jpg" alt="Instagram Video 2">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
-          <div class="insta-video insta-gradient">
+          <div class="insta-video">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/analytics1.jpg" alt="Instagram Video 1">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
-          <div class="insta-video insta-gradient">
+          <div class="insta-video">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/analytics3.jpg" alt="Instagram Video 2">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
-          <div class="insta-video insta-gradient">
+          <div class="insta-video">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/analytics4.jpg" alt="Instagram Video 2">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
-          <div class="insta-video insta-gradient">
+          <div class="insta-video">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/analytics5.jpg" alt="Instagram Video 2">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
-          <div class="insta-video insta-gradient">
+          <div class="insta-video">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/analytics6.jpg" alt="Instagram Video 2">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
-          <div class="insta-video insta-gradient">
+          <div class="insta-video">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/analytics7.jpg" alt="Instagram Video 2">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
-          <div class="insta-video insta-gradient">
+          <div class="insta-video">
             <img src="https://iripoliri-ugc.b-cdn.net/photos/analytics8.jpg" alt="Instagram Video 2">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
-  <section id="ugc-work" class="ugc-work section">
+  <section id="ugc-work" class="section">
     <div class="container">
       <h2 class="section-title">AESTHETIC CONTENT</h2>
       <div class="inner-container">
