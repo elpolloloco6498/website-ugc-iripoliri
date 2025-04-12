@@ -401,44 +401,31 @@
     }
     
     .video-placeholder {
-      position: absolute;
-      top: 12%;
-      left: 6%;
-      width: 88%;
-      height: 76%;
-      /* background-color: transparent; Use dark color */
-      border-radius: 5px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-    
-    .video-thumbnail {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      cursor: pointer;
-      background-color: transparent;
-    }
-    
-    .play-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 2rem;
-      background-color: rgba(var(--dark), 0.5); /* Use dark color */
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0.8;
-      pointer-events: none;
-    }
+  position: relative;
+}
+
+.video-thumbnail {
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: auto; /* ✅ Allow clicking the video */
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: white;
+  cursor: pointer;
+  z-index: 2; /* ✅ Higher than the video */
+  opacity: 0.8;
+  pointer-events: auto; /* ✅ Allow clicking the icon */
+}
+
+
 
     #ugc-work .container {
       width: 100%; /* Override to prevent shrinking */
@@ -1110,7 +1097,7 @@
 
   <section id="ugc-work" class="ugc-work section">
     <div class="container">
-      <h2 class="section-title">AEStHETIC CONTENT</h2>
+      <h2 class="section-title">AESTHETIC CONTENT</h2>
       <div class="inner-container">
         <div class="video-grid">
           <div class="iphone-mockup">
@@ -1139,7 +1126,7 @@
           </div>
           <div class="iphone-mockup">
             <div class="video-placeholder">
-              <video class="video-thumbnail" playsinline muted preload="metadata">
+              <video class="video-thumbnail" playsinline preload="metadata">
               <source src="https://iripoliri-ugc.b-cdn.net/videos/aesthetic_snorkling.MOV" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
@@ -1168,27 +1155,36 @@
       document.querySelector('.nav-links').classList.toggle('active');
     });
 
-    // Handle video play functionality for both setups
+    // Handle video play functionality
     document.querySelectorAll('.video-thumbnail').forEach(video => {
-      const playIcon = video.closest('.video-container, .video-placeholder').querySelector('.play-icon');
+      const videoPlaceholder = video.closest('.video-placeholder');
+      
+      // Ensure the video is inside a valid .video-placeholder
+      if (videoPlaceholder) {
+        const playIcon = videoPlaceholder.querySelector('.play-icon');
 
-      playIcon.addEventListener('click', function () {
-        if (video.paused || video.ended) {
-          video.play();
-          playIcon.style.opacity = 0; // Hide the play icon when the video starts
-        } else {
-          video.pause();
-          playIcon.style.opacity = 0.8; // Show the play icon when the video is paused
+        // Ensure the play icon exists
+        if (playIcon) {
+          // Play video when the play icon is clicked
+          playIcon.addEventListener('click', function () {
+            console.log('play clicked');
+
+            if (video.paused || video.ended) {
+              video.play();
+              playIcon.style.opacity = 0; // Hide the play icon when playing
+            } else {
+              console.log('video playing, need to pause');
+              video.pause();
+              playIcon.style.opacity = 0.8; // Show the play icon when paused
+            }
+          });
+
+          // Show the play icon when the video ends
+          video.addEventListener('ended', function () {
+            playIcon.style.opacity = 0.8; // Show the play icon when the video ends
+          });
         }
-      });
-
-      video.addEventListener('pause', function () {
-        playIcon.style.opacity = 0.8; // Show the play icon when the video is paused
-      });
-
-      video.addEventListener('ended', function () {
-        playIcon.style.opacity = 0.8; // Show the play icon when the video ends
-      });
+      }
     });
   </script>
 </body>
