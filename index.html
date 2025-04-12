@@ -286,11 +286,16 @@
       border-radius: 10px; /* Optional: Rounds the corners */
     }
 
+
     /* Adjust for tablets (max-width: 768px) */
     @media (max-width: 768px) {
       .text-overlay {
         font-size: 1.2rem; /* Reduce font size */
         padding: 8px; /* Adjust padding */
+      }
+
+      .talent-title {
+        font-size: 1rem !important;
       }
     }
 
@@ -303,20 +308,8 @@
     }
     
     .hero-img:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(var(--primary), 0.15);
+      box-shadow: 0 15px 40px rgba(var(--primary), 0.2);
     }
-
-    .hero-img:hover::after { opacity: 0.5; }
-    
-    .hero-img:nth-child(1) { transform: translateY(0px); }
-    .hero-img:nth-child(2) { transform: translateY(0px); }
-    .hero-img:nth-child(3) { transform: translateY(0px); }
-    .hero-img:nth-child(4) { transform: translateY(0px); }
-    .hero-img:nth-child(1):hover { transform: translateY(-10px); }
-    .hero-img:nth-child(2):hover { transform: translateY(10px); }
-    .hero-img:nth-child(3):hover { transform: translateY(-10px); }
-    .hero-img:nth-child(4):hover { transform: translateY(10px); }
     
     /* Instagram Stats */
     .insta-username {
@@ -474,7 +467,7 @@
     /* Adjust for tablets (max-width: 768px) */
     @media (max-width: 768px) {
       .insta-video img {
-        border-radius: 10px; /* Reduce border radius for tablets */
+        border-radius: 5px; /* Reduce border radius for tablets */
       }
 
       .lower-title {
@@ -506,7 +499,7 @@
       transform: translateY(-10px);
     }
     
-    .insta-video img { transition: transform 8s; }
+    .insta-video img { transition: transform 8s; border-radius: 10px;}
     .insta-video:hover img { transform: scale(1.1); }
     
     .analytics-info {
@@ -751,14 +744,6 @@
       }
     }
 
-    /* Optional: Fine-tune specific sections if needed */
-    #about {
-      padding-top: 140px; /* Add extra space for the "About Me" section */
-    }
-
-    #instagram {
-      padding-top: 140px; /* Add extra space for the "Instagram Analytics" section */
-    }
   </style>
 </head>
 <body>
@@ -789,7 +774,7 @@
             <h1 class="lower-title">Poletaeva</h1>
           </div>
           
-          <h2>UGC & Travel Content Creator</h2>
+          <h2 class="talent-title">UGC & Travel Content Creator</h2>
           <p>Specialized in <strong>Travel, Culture, Lifestyle</strong> content that captures authentic experiences and inspires wanderlust.</p>
 
           <div class="social-links">
@@ -821,7 +806,7 @@
       <div class="two-col about-content">
         <div class="video-aboutme">
           <div class="video-container">
-            <video class="video-thumbnail" playsinline muted>
+            <video class="video-thumbnail" playsinline>
               <source src="https://iripoliri-ugc.b-cdn.net/videos/aboutme_bonjour.MOV#t=0.001" type="video/mp4">
             </video>
             <div class="play-icon"><i class="fas fa-play"></i></div>
@@ -901,49 +886,49 @@
         <div class="video-grid">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline muted>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_cute_jewelry.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_cute_jewelry.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline muted>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_less_problems.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_less_problems.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline muted>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_red_heart_necklace.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_red_heart_necklace.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_ok_guys_we_are_back.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_ok_guys_we_are_back.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_what_do_we_do_when_sad.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_what_do_we_do_when_sad.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_salary_credited.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_salary_credited.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_me_after_saying.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_me_after_saying.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_if_this_is_your_vibe.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/brands_jewelry_if_this_is_your_vibe.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
@@ -957,25 +942,25 @@
         <div class="video-grid">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/humor_day_trip.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/humor_day_trip.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/humor_milk_vs_nutella.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/humor_milk_vs_nutella.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/humor_mopped_floor.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/humor_mopped_floor.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/humor_scare_bf.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/humor_scare_bf.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
@@ -989,25 +974,25 @@
         <div class="video-grid">
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/long_reviews_graph_tbilisi.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/long_reviews_graph_tbilisi.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/long_reviews_lafamilia.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/long_reviews_lafamilia.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/long_reviews_monument_1880.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/long_reviews_monument_1880.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
             <div class="video-placeholder">
               <video class="video-thumbnail" playsinline>
-                <source src="https://iripoliri-ugc.b-cdn.net/videos/long_reviews_mtirala.MOV" type="video/mp4">
+                <source src="https://iripoliri-ugc.b-cdn.net/videos/long_reviews_mtirala.MOV#t=0.001" type="video/mp4">
               </video>
               <div class="play-icon"><i class="fas fa-play"></i></div>
             </div>
@@ -1052,7 +1037,7 @@
     </div>
   </section>
 
-  <section id="ugc-work" class="section">
+  <section class="section">
     <div class="container">
       <h2 class="section-title">AESTHETIC CONTENT</h2>
       <div class="inner-container">
@@ -1111,6 +1096,32 @@
         document.querySelector('.nav-links').classList.remove('active');
       });
     });
+
+    // Video about me
+    const aboutMeVideoContainer = document.querySelector(".video-container"); // Select the video container
+    if (aboutMeVideoContainer) {
+      const aboutMeVideo = aboutMeVideoContainer.querySelector(".video-thumbnail"); // Select the video inside the container
+      const playIcon = aboutMeVideoContainer.querySelector(".play-icon"); // Select the play icon
+
+      // Ensure the video and play icon exist
+      if (aboutMeVideo && playIcon) {
+        // Play or pause the video when the play icon is clicked
+        playIcon.addEventListener("click", function () {
+          if (aboutMeVideo.paused || aboutMeVideo.ended) {
+            aboutMeVideo.play();
+            playIcon.style.opacity = 0; // Hide the play icon when the video starts playing
+          } else {
+            aboutMeVideo.pause();
+            playIcon.style.opacity = 0.8; // Show the play icon when the video is paused
+          }
+        });
+
+        // Show the play icon when the video ends
+        aboutMeVideo.addEventListener("ended", function () {
+          playIcon.style.opacity = 0.8; // Show the play icon when the video ends
+        });
+      }
+    }
 
     // Handle video play functionality
     document.querySelectorAll('.video-thumbnail').forEach(video => {
