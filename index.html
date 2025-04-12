@@ -484,6 +484,10 @@
       .upper-title {
         margin-bottom: 1rem !important;
       }
+
+      .play-icon {
+        font-size: 20px;
+      }
     }
     
     .insta-video:hover {
@@ -811,7 +815,7 @@
         <div class="video-aboutme">
           <div class="video-container">
             <video class="video-thumbnail" playsinline muted>
-              <source src="https://iripoliri-ugc.b-cdn.net/videos/aboutme_bonjour.MOV" type="video/mp4">
+              <source src="https://iripoliri-ugc.b-cdn.net/videos/aboutme_bonjour.MOV#t=0.001" type="video/mp4">
             </video>
             <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
@@ -1165,7 +1169,7 @@
 
             if (video.paused || video.ended) {
               video.play();
-              playIcon.style.opacity = 0.2; // Hide the play icon when playing
+              playIcon.style.opacity = 0; // Hide the play icon when playing
             } else {
               console.log('video playing, need to pause');
               video.pause();
