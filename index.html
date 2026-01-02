@@ -249,23 +249,35 @@
       font-family: var(--font-main);
     }
     
-    .hero-images {
-      display: grid;
-      grid-template-columns: repeat(2, 2fr);
-      gap: 30px;
+    .portfolio-categories {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
       width: 100%;
-      margin: auto;
-    }
-    
-    .hero-img {
-      border-radius: 10px;
-      overflow: hidden;
-      transition: all 0.5s;
-      position: relative;
+      margin: 40px auto;
+      flex-wrap: wrap;
     }
 
-    .hero-img img {
-      border-radius: 0px;
+    .category-item {
+      padding: 8px 20px;
+      background-color: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--accent);
+      border-radius: 20px;
+      font-weight: 400;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      transition: all 0.3s;
+      cursor: pointer;
+      font-family: var(--font-main);
+    }
+
+    .category-item:hover {
+      background-color: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(177, 194, 71, 0.15);
     }
 
     /* Default styling for larger screens */
@@ -723,26 +735,35 @@
     @media (max-width: 576px) {
       .hero-text h1 { font-size: 2.5rem; }
       .hero-text h2 { font-size: 1.3rem; }
-      
+
       .about-text h2, .section-title, .footer h2 { font-size: 2rem; }
       .about-text p, .hero-text p { font-size: 1rem; }
-      
+
       .analytics-info { padding: 30px; }
       .analytics-info h3 { font-size: 1.8rem; }
       .analytics-metric p { font-size: 1.5rem; }
       .footer-text { font-size: 1.1rem; }
-      
+
       .video-grid {
         grid-template-columns: repeat(4, 1fr); /* Ensure 4 videos per row */
         gap: 10px; /* Adjust spacing for smaller screens */
       }
-      
+
       .iphone-mockup {
         max-width: 140px;
       }
-      
+
       .photo-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .portfolio-categories {
+        gap: 12px;
+      }
+
+      .category-item {
+        padding: 6px 16px;
+        font-size: 0.85rem;
       }
     }
 
@@ -783,19 +804,11 @@
             <a href="mailto:irina.poletaeva.97@mail.ru"><i class="fas fa-envelope"></i>irina.poletaeva.97@mail.ru</a>
           </div>
         </div>
-        <div class="hero-images">
-          <div class="hero-img">
-            <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_overlay5.jpg" alt="Irina Portrait">
-          </div>
-          <div class="hero-img">
-            <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_overlay6.jpg" alt="Irina Traveling">
-          </div>
-          <div class="hero-img">
-            <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_overlay7.jpg" alt="Irina Portrait">
-          </div>
-          <div class="hero-img">
-            <img src="https://iripoliri-ugc.b-cdn.net/photos/hero_overlay8.jpg" alt="Irina Traveling">
-          </div>
+        <div class="portfolio-categories">
+          <div class="category-item">Brands</div>
+          <div class="category-item">Hotels</div>
+          <div class="category-item">Travel Agencies</div>
+          <div class="category-item">Restaurants</div>
         </div>
       </div>
     </div>
